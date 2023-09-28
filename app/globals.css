@@ -3,5 +3,9 @@
   padding: 0;
 }
 body {
+  color: #607b96;
   background-color: #011627;
+  border: 1px solid #1e2d3d;
+  height: 99.5dvh;
+  overflow: hidden;
 }

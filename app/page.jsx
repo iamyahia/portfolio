@@ -1,9 +1,9 @@
-import Button from "@mui/material/Button";
+import { Navbar } from "./components/Navbar";
 
 export default function Home() {
   return (
     <>
-      <Button variant="contained">Hello world</Button>
+      <Navbar />
     </>
   );
 }
