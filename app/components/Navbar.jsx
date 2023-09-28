@@ -1,16 +1,15 @@
 "use client";
-import styled from "@emotion/styled";
 import {
   AppBar,
   Box,
-  Button,
-  Menu,
-  MenuItem,
   Toolbar,
   Typography,
   Link,
+  IconButton,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 const pages = [
   {
@@ -31,57 +30,105 @@ const pages = [
   },
 ];
 
-const StyledToolbar = styled(Toolbar)({
-  display: "flex",
-  justifyContent: "space-between",
-});
-
-const StyledLink = styled(Link)({
-  textDecoration: "none",
-  textTransform: "lowercase",
-  fontWeight: "normal",
-  listStyle: "none",
-});
-export const Navbar = () => {
+export const Navbar = (props) => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const handleOpenNavMenu = (event) => {
+    setIsSmallScreen((prevBoolian) => !prevBoolian);
+  };
   return (
-    <AppBar
-      position="static"
-      style={{
-        display: "flex",
-        borderBottom: "1px solid #1E2D3D",
-        boxShadow: "none",
-      }}
-      color="transparent"
-    >
-      <StyledToolbar>
-        <Typography
-          variant="p"
-          component="p"
-          style={{ marginRight: "9.75rem" }}
-        >
-          yahia_hasan
-        </Typography>
-        <Box sx={{ display: { xs: "none", md: "flex", width: "100%" } }}>
-          {pages.map((page, index) => (
-            <StyledLink
-              key={page.name}
-              href={page.href}
+    <>
+      <AppBar
+        position="static"
+        style={{
+          boxShadow: "none",
+          borderBottom: "1px solid #1E2D3D",
+        }}
+        color="transparent"
+      >
+        <Toolbar>
+          <Typography
+            variant="p"
+            component="p"
+            style={{ marginRight: "9.75rem" }}
+          >
+            yahia_hasan
+          </Typography>
+          <Box
+            sx={{ display: { xs: "none", md: "flex", width: "100%" } }}
+            component="ul"
+          >
+            {pages.map((page, index) => (
+              <li
+                style={{
+                  borderLeft: "1px solid #1e2d3d",
+                  marginLeft: pages.length - 1 === index ? "auto" : "",
+                  padding: "0 32px",
+                  listStyleType: "none",
+                }}
+                key={index}
+              >
+                <Link
+                  key={page.name}
+                  href={page.href}
+                  color="inherit"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  {page.name}
+                </Link>
+              </li>
+            ))}
+          </Box>
+          <Box
+            sx={{ display: { xs: "flex", md: "none" } }}
+            style={{ marginLeft: "auto" }}
+          >
+            <IconButton
+              size="large"
+              aria-label="menu list of our website"
+              aria-controls="menu-appbar"
+              onClick={handleOpenNavMenu}
               color="inherit"
-              // variant="li"
-              // component="li"
-              sx={{ my: 2, color: "white" }}
               style={{
-                padding: "0 32px",
-                marginLeft: pages.length - 1 === index ? "auto" : "",
-                // borderRight: "1px double #ff6550",
-                borderLeft: "1px double #1e2d3d",
+                padding: 0,
               }}
             >
-              {page.name}
-            </StyledLink>
+              {!isSmallScreen ? <MenuIcon /> : <CloseIcon />}
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      {isSmallScreen && (
+        <Box
+          sx={{ display: { xs: "block", md: "none" } }}
+          component="ul"
+          style={{ color: "white" }}
+        >
+          {pages.map((page, index) => (
+            <li
+              style={{
+                borderBottom: "1px solid #1e2d3d",
+                display: "flex",
+              }}
+              key={index}
+            >
+              <Link
+                key={page.name}
+                href={page.href}
+                color="inherit"
+                style={{
+                  width: "100%",
+                  textDecoration: "none",
+                  padding: "1.125rem 1.125rem",
+                }}
+              >
+                {page.name}
+              </Link>
+            </li>
           ))}
         </Box>
-      </StyledToolbar>
-    </AppBar>
+      )}
+    </>
   );
 };
