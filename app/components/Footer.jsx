@@ -41,7 +41,6 @@ function Footer() {
         }}
       >
         <Typography
-          variant="p"
           component="p"
           sx={{
             width: {
