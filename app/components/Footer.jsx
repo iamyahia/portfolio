@@ -40,7 +40,15 @@ function Footer() {
           alignItems: "center",
         }}
       >
-        <Typography variant="p" component="p" style={{ width: "100px" }}>
+        <Typography
+          component="p"
+          sx={{
+            width: {
+              xs: "100%",
+              md: "100px",
+            },
+          }}
+        >
           find me in:
         </Typography>
         <Box
@@ -52,12 +60,18 @@ function Footer() {
           }}
         >
           {contacts.map((contact, index) => (
-            <li
+            <Box
+              component="li"
               style={{
                 padding: "11px 14px",
                 listStyleType: "none",
                 borderLeft: "1px solid #1e2d3d",
-                marginLeft: contacts.length - 1 === index ? "auto" : "",
+              }}
+              sx={{
+                marginLeft: {
+                  xs: index === 0 && "auto",
+                  md: contacts.length - 1 === index && "auto",
+                },
               }}
               key={index}
             >
@@ -80,7 +94,8 @@ function Footer() {
                   }}
                 >
                   {contact.username && (
-                    <p
+                    <Typography
+                      component="p"
                       style={{
                         fontWeight: 450,
                         fontSize: "16px",
@@ -88,12 +103,12 @@ function Footer() {
                       }}
                     >
                       {contact.username}
-                    </p>
+                    </Typography>
                   )}
                   {contact.icon}
                 </IconButton>
               </Link>
-            </li>
+            </Box>
           ))}
         </Box>
       </div>
