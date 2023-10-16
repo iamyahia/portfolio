@@ -25,10 +25,8 @@ function Footer() {
   return (
     <footer
       style={{
-        bottom: 0,
         width: "100%",
         display: "flex",
-        position: "absolute",
         borderTop: "1px solid #1E2D3D",
       }}
     >
@@ -94,16 +92,14 @@ function Footer() {
                   }}
                 >
                   {contact.username && (
-                    <Typography
-                      component="p"
+                    <p
                       style={{
-                        fontWeight: 450,
                         fontSize: "16px",
                         marginRight: "8px",
                       }}
                     >
                       {contact.username}
-                    </Typography>
+                    </p>
                   )}
                   {contact.icon}
                 </IconButton>
