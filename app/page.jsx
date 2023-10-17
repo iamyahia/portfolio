@@ -9,7 +9,15 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-      <div>
+      <Box
+        component="div"
+        sx={{
+          padding: {
+            xs: "2rem",
+            sm: "0",
+          },
+        }}
+      >
         <div
           style={{
             marginBottom: "5rem",
@@ -26,14 +34,21 @@ export default function Home() {
             &gt; Full-Stack developer
           </Typography>
         </div>
-        <div>
+        <Box
+          component="div"
+          sx={{
+            display: {
+              xs: "none",
+              sm: "block",
+            },
+          }}
+        >
           <Typography component="p">
             {" "}
             &#47;&#47; complete the game to continue.
           </Typography>
           <Typography
             component="p"
-            color="primary"
             style={{
               margin: "0.875rem 0 ",
             }}
@@ -48,8 +63,29 @@ export default function Home() {
               “https://github.com/example/url”
             </a>
           </Typography>
-        </div>
-      </div>
+        </Box>
+        <Box
+          component="div"
+          sx={{
+            display: {
+              xs: "block",
+              sm: "none",
+            },
+          }}
+        >
+          <Typography component="p">
+            {" "}
+            &#47;&#47; find my profile on Github:
+          </Typography>
+          <Typography component="p" className="mt-1">
+            <span style={{ color: "#4D5BCE" }}>const</span>&nbsp;
+            <span style={{ color: "#43D9AD" }}>githubLink</span>&nbsp;=&nbsp;
+            <a href="#" style={{ color: "#E99287", textDecoration: "none" }}>
+              “https://github.com/example/iamyahia”
+            </a>
+          </Typography>
+        </Box>
+      </Box>
       <Box
         component="div"
         sx={{
