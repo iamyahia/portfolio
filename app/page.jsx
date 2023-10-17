@@ -50,7 +50,17 @@ export default function Home() {
           </Typography>
         </div>
       </div>
-      <Box component="div">snake</Box>
+      <Box
+        component="div"
+        sx={{
+          display: {
+            xs: "none",
+            sm: "block",
+          },
+        }}
+      >
+        snake
+      </Box>
     </div>
   );
 }
