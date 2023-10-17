@@ -16,13 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <ThemeProvider theme={theme}>
       <html lang="en">
-        <body
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
+        <body>
           <Navbar />
           {children}
           <Footer />
