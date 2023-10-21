@@ -57,7 +57,8 @@ export default function Home() {
             &#47;&#47; you can also get the source-code on my Github repo.
           </Typography>
           <Typography component="p">
-            <span style={{ color: "#4D5BCE" }}>const</span>&nbsp;
+            <span style={{ color: "#4D5BCE" }}>const</span>
+            &nbsp;
             <span style={{ color: "#43D9AD" }}>githubLink</span>&nbsp;=&nbsp;
             <a href="#" style={{ color: "#E99287", textDecoration: "none" }}>
               “https://github.com/example/url”
@@ -72,6 +73,7 @@ export default function Home() {
               sm: "none",
             },
           }}
+          className="break-all"
         >
           <Typography component="p">
             {" "}
