@@ -96,11 +96,7 @@ const Navbar = (props) => {
         color="transparent"
       >
         <Toolbar>
-          <Typography
-            variant="p"
-            component="p"
-            style={{ marginRight: "9.75rem" }}
-          >
+          <Typography component="p" style={{ marginRight: "9.75rem" }}>
             yahia_hasan
           </Typography>
           <Box
@@ -125,7 +121,7 @@ const Navbar = (props) => {
                     textDecoration: "none",
                   }}
                 >
-                  {page.name}
+                  <Typography component="p">{page.name}</Typography>
                 </Link>
               </li>
             ))}
