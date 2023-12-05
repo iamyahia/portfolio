@@ -1,11 +1,13 @@
+"use strict";
+
 import "./globals.css";
 
 import { ThemeProvider } from "@mui/material";
 
 import theme from "./theme";
 
-import Footer from "./components/Footer";
-import { Navbar } from "./components/Navbar";
+import Footer from "../features/Footer";
+import Navbar from "../features/Navbar";
 
 export const metadata = {
   title: "Yahia",

@@ -40,7 +40,7 @@ const pages = [
   },
 ];
 
-export const Navbar = (props) => {
+const Navbar = (props) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [bottom, setBottom] = useState(false);
 
@@ -159,3 +159,5 @@ export const Navbar = (props) => {
     </>
   );
 };
+
+export default Navbar;

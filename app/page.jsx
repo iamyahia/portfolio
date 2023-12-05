@@ -82,8 +82,12 @@ export default function Home() {
           <Typography component="p" className="mt-1">
             <span style={{ color: "#4D5BCE" }}>const</span>&nbsp;
             <span style={{ color: "#43D9AD" }}>githubLink</span>&nbsp;=&nbsp;
-            <a href="#" style={{ color: "#E99287", textDecoration: "none" }}>
-              “https://github.com/example/iamyahia”
+            <a
+              href="https://github.com/iamyahia"
+              target="_blank"
+              style={{ color: "#E99287", textDecoration: "none" }}
+            >
+              “https://github.com/iamyahia”
             </a>
           </Typography>
         </Box>
