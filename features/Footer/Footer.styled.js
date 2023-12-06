@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { Typography, styled } from "@mui/material";
+import { Typography, styled, IconButton } from "@mui/material";
 
 const Container = styled("footer")({
   width: "100%",
@@ -43,11 +43,21 @@ const UsernameTypography = styled(Typography)({
   marginRight: "1rem",
 });
 
+const ContactIconButton = styled(IconButton)({
+  padding: 0,
+});
+
+const FooterInfoTypography = styled(Typography)({
+  whiteSpace: "nowrap",
+});
+
 export {
   Wrapper,
   Container,
   ContactBox,
   ContactsBox,
   ContactLink,
+  ContactIconButton,
   UsernameTypography,
+  FooterInfoTypography,
 };

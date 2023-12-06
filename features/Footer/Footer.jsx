@@ -1,7 +1,7 @@
 import React from "react";
 // packages
 import Link from "next/link";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 import * as Styled from "./Footer.styled";
 
@@ -11,9 +11,9 @@ function Footer() {
   return (
     <Styled.Container>
       <Styled.Wrapper>
-        <Typography component="p" className="whitespace-nowrap  mr-[1.125rem]">
+        <Styled.FooterInfoTypography component="p">
           find me in:
-        </Typography>
+        </Styled.FooterInfoTypography>
         <Styled.ContactsBox>
           {contacts.map((contact, index) => (
             <Styled.ContactBox
@@ -33,13 +33,10 @@ function Footer() {
                 color="inherit"
                 target="_blank"
               >
-                <IconButton
+                <Styled.ContactIconButton
                   size="large"
                   aria-label={`${contact.name} contact`}
                   color="inherit"
-                  style={{
-                    padding: 0,
-                  }}
                 >
                   {contact.username && (
                     <Styled.UsernameTypography>
@@ -47,7 +44,7 @@ function Footer() {
                     </Styled.UsernameTypography>
                   )}
                   {contact.icon}
-                </IconButton>
+                </Styled.ContactIconButton>
               </Styled.ContactLink>
             </Styled.ContactBox>
           ))}
