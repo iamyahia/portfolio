@@ -3,60 +3,21 @@ import React from "react";
 import Link from "next/link";
 import { Box, IconButton, Typography } from "@mui/material";
 
-// icons
-import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
+import * as Styled from "./Footer.styled";
 
-const contacts = [
-  {
-    name: "instagram",
-    icon: <InstagramIcon />,
-    href: "https://www.instagram.com/yahiabaiz/",
-  },
-  {
-    name: "github",
-    username: "@iamyahia",
-    icon: <GitHubIcon />,
-    href: "https://github.com/iamyahia/",
-  },
-];
+import { contacts } from "./utils/constant";
 
 function Footer() {
   return (
-    <footer
-      style={{
-        width: "100%",
-        display: "flex",
-        borderTop: "1px solid #1E2D3D",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          padding: "0 24px",
-          alignItems: "center",
-        }}
-      >
+    <Styled.Container>
+      <Styled.Wrapper>
         <Typography component="p" className="whitespace-nowrap  mr-[1.125rem]">
           find me in:
         </Typography>
-        <Box
-          sx={{ display: { xs: "none", md: "flex", width: "100%" } }}
-          component="ul"
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <Styled.ContactsBox>
           {contacts.map((contact, index) => (
-            <Box
+            <Styled.ContactBox
               component="li"
-              style={{
-                padding: "11px 14px",
-                listStyleType: "none",
-                borderLeft: "1px solid #1e2d3d",
-              }}
               sx={{
                 marginLeft: {
                   xs: index === 0 && "auto",
@@ -64,15 +25,12 @@ function Footer() {
                 },
               }}
               key={index}
+              contactLength={contact.length}
             >
-              <Link
+              <Styled.ContactLink
                 key={contact.name}
                 href={contact.href}
                 color="inherit"
-                style={{
-                  color: "#607B96",
-                  textDecoration: "none",
-                }}
                 target="_blank"
               >
                 <IconButton
@@ -84,16 +42,18 @@ function Footer() {
                   }}
                 >
                   {contact.username && (
-                    <Typography className="mr-2">{contact.username}</Typography>
+                    <Styled.UsernameTypography>
+                      {contact.username}
+                    </Styled.UsernameTypography>
                   )}
                   {contact.icon}
                 </IconButton>
-              </Link>
-            </Box>
+              </Styled.ContactLink>
+            </Styled.ContactBox>
           ))}
-        </Box>
-      </div>
-    </footer>
+        </Styled.ContactsBox>
+      </Styled.Wrapper>
+    </Styled.Container>
   );
 }
 
