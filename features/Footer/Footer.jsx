@@ -38,9 +38,7 @@ function Footer() {
           alignItems: "center",
         }}
       >
-        <Typography component="p" className="whitespace-nowrap  mr-[1.125rem]">
-          find me in:
-        </Typography>
+        <Typography component="p">find me in:</Typography>
         <Box
           sx={{ display: { xs: "none", md: "flex", width: "100%" } }}
           component="ul"
@@ -84,7 +82,7 @@ function Footer() {
                   }}
                 >
                   {contact.username && (
-                    <Typography className="mr-2">{contact.username}</Typography>
+                    <Typography>{contact.username}</Typography>
                   )}
                   {contact.icon}
                 </IconButton>

@@ -73,13 +73,12 @@ export default function Home() {
               sm: "none",
             },
           }}
-          className="break-all"
         >
           <Typography component="p">
             {" "}
             &#47;&#47; find my profile on Github:
           </Typography>
-          <Typography component="p" className="mt-1">
+          <Typography component="p">
             <span style={{ color: "#4D5BCE" }}>const</span>&nbsp;
             <span style={{ color: "#43D9AD" }}>githubLink</span>&nbsp;=&nbsp;
             <a
