@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Tetris from "../features/Tetris/Tetris";
+import "../features/Tetris/assets/scss/global.scss";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-      {/* <Box
+      <Box
         component="div"
         sx={{
           padding: {
@@ -92,7 +93,7 @@ export default function Home() {
             </a>
           </Typography>
         </Box>
-      </Box> */}
+      </Box>
       <Box
         component="div"
         sx={{

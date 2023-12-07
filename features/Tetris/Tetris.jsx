@@ -564,7 +564,7 @@ const Tetris = () => {
                 </li>
               </ul>
             </Html>
-            <MiniAxes cameraDirection={cameraDirection} position={[0, -2, 0]} />
+            {/* <MiniAxes cameraDirection={cameraDirection} position={[0, -2, 0]} /> */}
           </Canvas>
         </div>
       </div>
