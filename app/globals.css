@@ -10,11 +10,11 @@ body {
   /* overflow-x: hidden; */
 }
 body {
-  display: flex;
+  /* display: flex; */
   color: #607b96;
   overflow: hidden;
-  flex-direction: column;
+  /* flex-direction: column; */
   border: 1px solid #1e2d3d;
   background-color: #011627;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }

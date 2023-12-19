@@ -507,6 +507,7 @@ const Tetris = () => {
               minAzimuthAngle={0}
               maxAzimuthAngle={Math.PI / 2}
               enabled={!isPaused}
+              enablePan={false}
             />
             <CameraDirectionUpdater setDirection={setCameraDirection} />
 

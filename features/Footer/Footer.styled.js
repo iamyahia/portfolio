@@ -8,6 +8,8 @@ const Container = styled("footer")({
   width: "100%",
   display: "flex",
   borderTop: "1px solid #1E2D3D",
+  position: "absolute",
+  bottom: 0,
 });
 
 const Wrapper = styled("div")({
