@@ -12,16 +12,12 @@ body {
   font-family: pascante;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   height: 89dvh;
-  overflow: hidden;
-  /* margin-left: 3rem; */
   padding: 3rem;
 }
 
 .name {
-  /* font-size: 250px; */
   font-size: calc(20px + 10vw);
 }
 
@@ -30,7 +26,6 @@ body {
   transition: color 0.2s ease-in;
 }
 .title {
-  /* font-size: 55px; */
   font-size: calc(16px + 3vw);
 }
 
@@ -41,12 +36,9 @@ body {
 
 .footer {
   color: red;
-  position: absolute;
   bottom: 2rem;
   right: 50%;
   font-size: calc(16px + 0.5vw);
-
-  /* display: flex; */
 }
 
 a {
