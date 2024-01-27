@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: pascante;
+  src: url("./assets/fonts/Pescante-Normal.ttf");
+}
+body {
+  background-color: black;
+  color: #eee;
+  font-family: pascante;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  height: 89dvh;
+  overflow: hidden;
+  /* margin-left: 3rem; */
+  padding: 3rem;
+}
+
+.name {
+  /* font-size: 250px; */
+  font-size: calc(20px + 10vw);
+}
+
+.name:hover {
+  color: #49ffac;
+  transition: color 0.2s ease-in;
+}
+.title {
+  /* font-size: 55px; */
+  font-size: calc(16px + 3vw);
+}
+
+.description {
+  margin-top: 3rem;
+  font-size: calc(16px + 1vw);
+}
+
+.footer {
+  color: red;
+  position: absolute;
+  bottom: 2rem;
+  right: 50%;
+  font-size: calc(16px + 0.5vw);
+
+  /* display: flex; */
+}
+
+a {
+  color: #eee;
+}
