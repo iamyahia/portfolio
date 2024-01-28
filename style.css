@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 89dvh;
+  height: 100dvh;
   padding: 3rem;
 }
 
@@ -52,7 +52,8 @@ a {
   height: 50px;
   border-radius: 50%;
   background-color: #fff;
-  transition: transform 0.1s;
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: difference;
