@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 @font-face {
   font-family: pascante;
@@ -36,11 +37,37 @@ body {
 
 .footer {
   color: red;
-  bottom: 2rem;
-  right: 50%;
   font-size: calc(16px + 0.5vw);
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   color: #eee;
+}
+
+.cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.1s;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+.cursor.hovered {
+  transform: translate(-50%, -50%) scale(4);
+}
+
+.content,
+.footer {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer a {
+  margin-top: 0.5rem;
 }

@@ -7,23 +7,54 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div></div>
-    <div>
-      <h1 class="name">yahia hasan</h1>
-      <h3 class="title">front-end web developer</h3>
-      <p class="description">
-        "Explore the evolution of my portfolio, currently under active
-        development and set to feature multi-language blogs (Kurdish / English)
-        covering a diverse range of development topics. Stay tuned for the
-        unveiling!"
-      </p>
+    <div class="parent">
+      <div class="content">
+        <h1 class="name">yahia hasan</h1>
+        <h3 class="title">front-end web developer</h3>
+        <p class="description">
+          "Explore the evolution of my portfolio, currently under active
+          development and set to feature multi-language blogs (Kurdish /
+          English) covering a diverse range of development topics. Stay tuned
+          for the unveiling!"
+        </p>
+      </div>
+      <div class="footer">
+        <br />
+        <br />
+        <p>my community:</p>
+        <a target="_blank" href="https://www.instagram.com/yahiabaiz/"
+          >instagram</a
+        >
+        <a target="_blank" href="https://www.linkedin.com/in/iamyahia/"
+          >linkedin</a
+        >
+        <a target="_blank" href="https://judisoft.com">my team</a>
+      </div>
+      <div class="cursor"></div>
     </div>
-    <div class="footer">
-      <p>my community:</p>
-      <br />
-      <a  target="_blank"  href="https://www.instagram.com/yahiabaiz/">instagram</p>
-        <a  target="_blank" href="https://www.linkedin.com/in/iamyahia/">linkedin</p>
-            <a  target="_blank" href="https://judisoft.com">my team</p>
-    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cursor = document.querySelector(".cursor");
+        const hoverElements = document.querySelectorAll(
+          ".name, .title, .description, .footer a"
+        );
+
+        document.addEventListener("mousemove", (e) => {
+          cursor.style.left = e.pageX + "px";
+          cursor.style.top = e.pageY + "px";
+        });
+
+        hoverElements.forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            cursor.classList.add("hovered");
+          });
+
+          el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("hovered");
+          });
+        });
+      });
+    </script>
   </body>
 </html>
