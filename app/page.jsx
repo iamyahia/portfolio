@@ -27,7 +27,7 @@ export default function Home() {
           }}
         >
           <Typography component="h6" variant="h6">
-            Hi all. I am
+            Hi all. I am test
           </Typography>
           <Typography component="h1" variant="h1">
             Yahia Hasan
