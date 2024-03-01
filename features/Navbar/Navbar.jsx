@@ -6,10 +6,20 @@ import {
   Typography,
   Link,
   IconButton,
+  Drawer,
+  SwipeableDrawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Divider,
 } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 
 const pages = [
   {
@@ -30,11 +40,50 @@ const pages = [
   },
 ];
 
-export const Navbar = (props) => {
+const Navbar = (props) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [bottom, setBottom] = useState(false);
+
   const handleOpenNavMenu = (event) => {
     setIsSmallScreen((prevBoolian) => !prevBoolian);
+    setBottom((prevBoolean) => !prevBoolean);
   };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: "auto" }}
+      role="presentation"
+      onClick={() => setBottom(false)}
+      onKeyDown={() => setBottom(false)}
+    >
+      <List>
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {["All mail", "Trash", "Spam"].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <>
       <AppBar
@@ -42,15 +91,12 @@ export const Navbar = (props) => {
         style={{
           boxShadow: "none",
           borderBottom: "1px solid #1E2D3D",
+          position: "relative",
         }}
         color="transparent"
       >
         <Toolbar>
-          <Typography
-            variant="p"
-            component="p"
-            style={{ marginRight: "9.75rem" }}
-          >
+          <Typography component="p" style={{ marginRight: "9.75rem" }}>
             yahia_hasan
           </Typography>
           <Box
@@ -75,7 +121,7 @@ export const Navbar = (props) => {
                     textDecoration: "none",
                   }}
                 >
-                  {page.name}
+                  <Typography component="p">{page.name}</Typography>
                 </Link>
               </li>
             ))}
@@ -94,41 +140,20 @@ export const Navbar = (props) => {
                 padding: 0,
               }}
             >
-              {!isSmallScreen ? <MenuIcon /> : <CloseIcon />}
+              {!bottom ? <MenuIcon /> : <CloseIcon />}
             </IconButton>
           </Box>
         </Toolbar>
-      </AppBar>
-      {isSmallScreen && (
-        <Box
-          sx={{ display: { xs: "block", md: "none" } }}
-          component="ul"
-          style={{ color: "white" }}
+        <SwipeableDrawer
+          anchor="top"
+          open={bottom}
+          onClose={() => setBottom(false)}
         >
-          {pages.map((page, index) => (
-            <li
-              style={{
-                borderBottom: "1px solid #1e2d3d",
-                display: "flex",
-              }}
-              key={index}
-            >
-              <Link
-                key={page.name}
-                href={page.href}
-                color="inherit"
-                style={{
-                  width: "100%",
-                  textDecoration: "none",
-                  padding: "1.125rem 1.125rem",
-                }}
-              >
-                {page.name}
-              </Link>
-            </li>
-          ))}
-        </Box>
-      )}
+          {list("top")}
+        </SwipeableDrawer>
+      </AppBar>
     </>
   );
 };
+
+export default Navbar;
