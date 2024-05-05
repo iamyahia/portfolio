@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from "react";
 import {
   AppBar,
   Box,
@@ -15,30 +16,15 @@ import {
   ListItemText,
   Divider,
 } from "@mui/material";
-import React, { useState } from "react";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 
-const pages = [
-  {
-    name: "_hello",
-    href: "/",
-  },
-  {
-    name: "_about-me",
-    href: "/about-me",
-  },
-  {
-    name: "_projects",
-    href: "/projects",
-  },
-  {
-    name: "_contact-me",
-    href: "/contact-me",
-  },
-];
+import { pages } from "./utils/contant";
+
+import * as Styled from "./Navbar.styled";
 
 const Navbar = (props) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -86,28 +72,18 @@ const Navbar = (props) => {
 
   return (
     <>
-      <AppBar
-        position="static"
-        style={{
-          boxShadow: "none",
-          borderBottom: "1px solid #1E2D3D",
-          position: "relative",
-        }}
-        color="transparent"
-      >
+      <Styled.Container position="static" color="transparent">
         <Toolbar>
-          <Typography component="p" style={{ marginRight: "9.75rem" }}>
-            yahia_hasan
-          </Typography>
+          <Styled.UserName component="p">yahia_hasan</Styled.UserName>
           <Box
             sx={{ display: { xs: "none", md: "flex", width: "100%" } }}
-            component="ul"
+            // component="ul"
           >
             {pages.map((page, index) => (
               <li
                 style={{
                   borderLeft: "1px solid #1e2d3d",
-                  marginLeft: pages.length - 1 === index ? "auto" : "",
+                  // marginLeft: pages.length - 1 === index ? "auto" : "",
                   padding: "0 32px",
                   listStyleType: "none",
                 }}
@@ -151,7 +127,7 @@ const Navbar = (props) => {
         >
           {list("top")}
         </SwipeableDrawer>
-      </AppBar>
+      </Styled.Container>
     </>
   );
 };

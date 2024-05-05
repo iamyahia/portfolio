@@ -27,13 +27,13 @@ export default function Home() {
           }}
         >
           <Typography component="h6" variant="h6">
-            Hi all. I am test
+            Hi all. I am almost there
           </Typography>
           <Typography component="h1" variant="h1">
             Yahia Hasan
           </Typography>
           <Typography component="h2" variant="h2" style={{ color: "#4D5BCE" }}>
-            &gt; Full-Stack developer
+            &gt; Front-End developer
           </Typography>
         </div>
         <Box

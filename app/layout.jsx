@@ -11,7 +11,7 @@ import Navbar from "../features/Navbar";
 
 export const metadata = {
   title: "Yahia",
-  description: "full stack developer",
+  description: "front stack developer",
 };
 
 export default function RootLayout({ children }) {
