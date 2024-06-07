@@ -5,7 +5,10 @@ import { useFrame, useThree } from "@react-three/fiber";
 import React, { useEffect, useRef } from "react";
 import { ArrowHelper, Color, Group, Vector3 } from "three";
 
-const MiniAxes = ({ position = [0, 0, 0], cameraDirection }) => {
+const MiniAxes = ({
+  position = [0, 0, 0] as [number, number, number],
+  cameraDirection,
+}) => {
   const { scene } = useThree();
   const groupRef = useRef(new Group());
   const scaleValue = 0.4;

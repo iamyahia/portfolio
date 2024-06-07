@@ -5,15 +5,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Vector3 } from "three";
 import { CameraDirectionUpdater } from "./components/CameraDirectionUpdater";
 import MiniAxes from "./components/MiniAxes";
-import {
-  Block,
-  FallenCubes,
-  Tetrimino,
-  Tetriminos,
-} from "./components/Tetrimino";
+import { FallenCubes, Tetrimino, Tetriminos } from "./components/Tetrimino";
 import ThreeSidedGrid from "./components/ThreeSidedGrid";
-
-import GitHubLogo from "./assets/images/github.svg";
 
 // Randomly select block type（Multi-bag Random Generator）
 let bag = [];
@@ -111,7 +104,7 @@ const Tetris = () => {
   const [gameOver, setGameOver] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [gameStarted, setGameStarted] = useState(false);
-  const fallIntervalRef = useRef();
+  const fallIntervalRef = useRef<number | null>(null);
 
   // Get the current rotation angle
   const controlsRef = useRef(null);
@@ -214,7 +207,7 @@ const Tetris = () => {
       clearInterval(fallIntervalRef.current);
     }
 
-    fallIntervalRef.current = setInterval(() => {
+    fallIntervalRef.current = window.setInterval(() => {
       let [x, y, z] = position;
       let newY = y - 1; // Predicted new location
       const predictedBlocksPosition = blocks.map((block) => ({
