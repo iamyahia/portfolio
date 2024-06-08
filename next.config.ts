@@ -4,7 +4,10 @@ const path = require("path");
 
 const nextConfig = {
   sassOptions: {
-    includePaths: [path.join(__dirname, "/features/Tetris/assets/scss/")],
+    includePaths: [
+      path.join(__dirname, "/features/Tetris/assets/scss/"),
+      path.join(__dirname, "styles"),
+    ],
   },
 };
 
