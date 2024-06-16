@@ -1,6 +1,6 @@
 "use strict";
 
-import "./globals.css";
+import "../styles/main.scss";
 
 export const metadata = {
   title: "Yahia",
