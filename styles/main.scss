@@ -1,8 +1,8 @@
-// Description: Main SCSS file for the project.
-@import "base/globals";
-
 // Helpers
 @import "helpers/variables";
+
+// Description: Main SCSS file for the project.
+@import "base/globals";
 
 // Components
 @import "components/button";

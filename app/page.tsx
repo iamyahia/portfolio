@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <p>hi</p>
-      <Button variant="tangaroa">Test</Button>
+      <Button variant="outline">Test</Button>
     </>
   );
 }

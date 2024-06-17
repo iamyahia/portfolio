@@ -1,41 +1,49 @@
 .button {
-  background-color: #f00;
-  color: #fff;
   border: none;
   padding: 10px 14px;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s;
+
   &--peaches {
     color: $color-ebony-clay-100;
     background-color: $color-pale-orange-100;
+
     &:hover {
       background-color: $color-pale-orange-200;
     }
+
     &:active {
       background-color: $color-pale-orange-300;
     }
   }
+
   &--tangaroa {
     color: white;
     background-color: $color-ebony-clay-100;
+
     &:hover {
       background-color: $color-ebony-clay-200;
     }
+
     &:active {
       background-color: $color-ebony-clay-300;
     }
   }
+
   &--outline {
     color: white;
     background-color: transparent;
     border: 1px solid white;
+
     &:hover {
       background-color: white;
       color: $color-ebony-clay-100;
     }
+
     &:active {
-      background-color: #e2e2e2;
+      background-color: $color-white-shade;
+      color: $color-ebony-clay-100;
     }
   }
 }
