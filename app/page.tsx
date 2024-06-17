@@ -4,8 +4,12 @@ import Tetris from "../features/Tetris/Tetris";
 export default function Home() {
   return (
     <>
-      <p>hi</p>
-      <Button variant="outline">Test</Button>
+      <br />
+      <br />
+      <br />
+      <br />
+      home
+      <Button variant="tangaroa">Test</Button>
     </>
   );
 }
