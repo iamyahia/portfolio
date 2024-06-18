@@ -1,62 +1,37 @@
-import React from "react";
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { navItems } from "./navbarItems";
+import clsx from "clsx";
 
 function Navbar() {
+  const pathName = usePathname();
+
   return (
-    <nav
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-between",
-        borderBottom: "1px solid #ffffff",
-        height: "44px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <a
-          href="/"
+    <nav className="navbar">
+      <div className="navbar__logo">
+        <p
+          className="navbar__logo-icon"
           style={{
             minWidth: "275px",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            textDecoration: "none",
-            color: `$color-slate-blue`,
-            borderRight: "1px solid #ffffff",
           }}
         >
           yahia-hasan
-        </a>
+        </p>
         {navItems.map((item) => (
-          <a
-            href="/"
-            style={{
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              textDecoration: "none",
-              color: "white",
-              borderRight: "1px solid #ffffff",
-            }}
+          <Link
+            href={item.href}
+            className={clsx("navbar__link", {
+              "navbar__link--active": pathName === item.href,
+            })}
             key={item.key}
           >
             {item.value}
-          </a>
+          </Link>
         ))}
       </div>
-      <a
-        style={{
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          borderLeft: "1px solid #ffffff",
-        }}
-      >
+      <a href="/" className="navbar__contact">
         _contact-me
       </a>
     </nav>
