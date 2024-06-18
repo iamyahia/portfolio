@@ -3,7 +3,7 @@
   width: 100%;
   height: 44px;
   justify-content: space-between;
-  border-bottom: 1px solid $color-slate-blue;
+  border-bottom: 1px solid $color-ebony-clay;
 }
 
 .navbar__logo {
@@ -15,12 +15,12 @@
 }
 
 .navbar__contact {
-  border-left: 1px solid $color-slate-blue;
+  border-left: 1px solid $color-ebony-clay;
 }
 
 .navbar__logo-icon,
 .navbar__link {
-  border-right: 1px solid $color-slate-blue;
+  border-right: 1px solid $color-ebony-clay;
 }
 
 .navbar__logo-icon,
@@ -31,27 +31,13 @@
   align-items: center;
   text-decoration: none;
   color: $color-slate-blue;
+  padding: 0 24px;
 }
-// .navbar__link,
-// .navbar__contact {
-//   transition: all 0.25s;
-//   &:not(.navbar__link--active) {
-//     &:hover {
-//       color: white;
-//       background-color: rgba($color-white-shade, 0.1);
-//     }
-
-//     &:active {
-//       color: $color-slate-blue;
-//       background-color: $color-white-shade;
-//     }
-//   }
-// }
 
 .navbar__link,
 .navbar__contact {
   position: relative;
-  transition: all 0.25s;
+  transition: color 0.25s, background-color 0.25s;
 
   &:not(.navbar__link--active) {
     &:hover {
