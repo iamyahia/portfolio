@@ -1,3 +1,21 @@
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-25vh);
+  }
+}
+
 .navbar,
 .navbar__container {
   display: flex;
@@ -80,7 +98,7 @@
 [class^="navbar__dialog"] {
   display: none;
 }
-// Add this to your navbar.scss file
+
 @media (max-width: 1024px) {
   .navbar__container {
     display: none;
@@ -99,11 +117,24 @@
     padding-left: 24px;
   }
   .navbar__dialog-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: $color-white-shade;
+    top: 60px;
+    left: 1rem;
+    right: 1rem;
     padding: 24px;
+    position: absolute;
+    background-color: $color-white-shade;
+
+    animation-duration: 0.5s; // adjust as needed
+    &.show {
+      animation-name: slideDown;
+    }
+
+    &.hide {
+      animation-name: slideUp;
+    }
+  }
+
+  .navbar__dialog-overlay {
+    // todo
   }
 }

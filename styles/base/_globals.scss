@@ -9,10 +9,14 @@ body {
   height: calc(100% - 1rem);
 }
 
+html {
+  background-color: $color-charcoal-blue;
+}
 body {
   margin: 1rem;
   overflow: hidden;
   color: $color-slate-blue;
   border: 1px solid $color-ebony-clay;
   background-color: $color-black-pearl;
+  border-radius: 8px;
 }

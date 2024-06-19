@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -7,6 +8,8 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { navItems } from "./navbarItems";
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
   const pathName = usePathname();
 
   return (
@@ -31,17 +34,26 @@ function Navbar() {
             _contact-me
           </a>
         </div>
-        <Dialog.Root>
+        <Dialog.Root open={open} onOpenChange={setOpen} modal>
           <p className="navbar__dialog-logo-icon">yahia-hasan</p>
           <Dialog.Trigger className="navbar__dialog-trigger">☰</Dialog.Trigger>
           <Dialog.Portal>
-            <Dialog.Overlay className="navbar__dialog-overlay" />
-            <Dialog.Content className="navbar__dialog-content">
-              <Dialog.Title className="navbar__dialog-title">
-                Title
-              </Dialog.Title>
+            {/* <Dialog.Overlay className="navbar__dialog-overlay" /> */}
+            <Dialog.Content
+              className={`navbar__dialog-content ${open ? "show" : "hide"}`}
+            >
               <Dialog.Description className="navbar__dialog-description">
-                Description
+                {navItems.map((item) => (
+                  <Link
+                    href={item.href}
+                    className={clsx("navbar__link", {
+                      "navbar__link--active": pathName === item.href,
+                    })}
+                    key={item.key}
+                  >
+                    {item.value}
+                  </Link>
+                ))}
               </Dialog.Description>
               <Dialog.Close className="navbar__dialog-close">x</Dialog.Close>
             </Dialog.Content>
