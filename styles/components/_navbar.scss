@@ -1,4 +1,5 @@
-.navbar {
+.navbar,
+.navbar__container {
   display: flex;
   width: 100%;
   height: 44px;
@@ -72,7 +73,37 @@
 }
 
 .navbar__link--active {
-  border-bottom: 2px solid orange;
-  //   background-color: $color-slate-blue !important;
   color: white;
+  border-bottom: 2px solid orange;
+}
+
+[class^="navbar__dialog"] {
+  display: none;
+}
+// Add this to your navbar.scss file
+@media (max-width: 1024px) {
+  .navbar__container {
+    display: none;
+  }
+
+  .navbar__dialog-trigger {
+    display: inline;
+  }
+  [class^="navbar__dialog"] {
+    display: block;
+  }
+
+  .navbar__dialog-logo-icon {
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+  }
+  .navbar__dialog-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-white-shade;
+    padding: 24px;
+  }
 }
