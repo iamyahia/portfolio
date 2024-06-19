@@ -6,17 +6,20 @@
 
 html,
 body {
-  height: calc(100% - 1rem);
+  height: calc(100% - 30px);
+  overflow: hidden;
 }
 
 html {
   background-color: $color-charcoal-blue;
 }
 body {
-  margin: 1rem;
-  overflow: hidden;
+  margin: 30px;
+  display: flex;
+  border-radius: 8px;
+  flex-direction: column;
   color: $color-slate-blue;
+  justify-content: space-between;
   border: 1px solid $color-ebony-clay;
   background-color: $color-black-pearl;
-  border-radius: 8px;
 }
