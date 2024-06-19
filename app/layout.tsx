@@ -1,7 +1,9 @@
 "use strict";
 
-import { Navbar } from "../components/Navbar/Navbar";
 import "../styles/main.scss";
+
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 export const metadata = {
   title: "Yahia",
@@ -14,6 +16,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
