@@ -1,12 +1,18 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: calc(100% - 1rem);
 }
 
 body {
-  color: $color-slate-blue;
+  margin: 1rem;
   overflow: hidden;
+  color: $color-slate-blue;
   border: 1px solid $color-ebony-clay;
   background-color: $color-black-pearl;
-  margin: 1rem;
 }
