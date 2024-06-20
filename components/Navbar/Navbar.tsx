@@ -55,10 +55,11 @@ function Navbar() {
           </Dialog.Trigger>
           <Dialog.Portal>
             {/* <Dialog.Overlay className="navbar__dialog-overlay" /> */}
+            {/* //todo: add clsx for conditional class inserting */}
             <Dialog.Content
               className={`navbar__dialog-content ${open ? "show" : "hide"}`}
             >
-              <Dialog.Description className="navbar__dialog-description">
+              <div className="navbar__dialog-description">
                 {navItems.map((item) => (
                   <Link
                     href={item.href}
@@ -70,8 +71,8 @@ function Navbar() {
                     {item.value}
                   </Link>
                 ))}
-              </Dialog.Description>
-              <Dialog.Close className="navbar__dialog-close">x</Dialog.Close>
+              </div>
+              {/* <Dialog.Close className="navbar__dialog-close">x</Dialog.Close> */}
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>

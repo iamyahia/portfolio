@@ -2,10 +2,14 @@
   height: 50px;
   display: flex;
   overflow: auto;
-  font-size: 14px;
+  z-index: 1;
+  position: relative;
+  font-size: 16px;
   text-wrap: nowrap;
   align-items: center;
+  background-color: $color-black-pearl;
   border-top: 1px solid $color-ebony-clay;
+
   p {
     padding: 0 20px;
   }

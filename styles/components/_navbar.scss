@@ -27,6 +27,9 @@
 
 .navbar {
   padding: 0 24px;
+  background-color: $color-black-pearl;
+  z-index: 1;
+  position: relative;
 }
 
 .navbar__logo {
@@ -142,14 +145,12 @@
     align-items: center;
   }
   .navbar__dialog-content {
-    top: 60px;
-    left: 1rem;
-    right: 1rem;
-    padding: 24px;
+    top: 45px;
+    left: 0;
+    right: 0;
+    // padding: 24px;
     position: absolute;
-    background-color: $color-white-shade;
-
-    z-index: 10;
+    background-color: $color-black-pearl;
 
     animation-duration: 0.5s; // adjust as needed
     &.show {
@@ -158,6 +159,10 @@
 
     &.hide {
       animation-name: slideUp;
+    }
+
+    .navbar__link {
+      padding: 18px;
     }
   }
 

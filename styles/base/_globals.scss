@@ -16,6 +16,7 @@ html {
 body {
   margin: 30px;
   display: flex;
+  position: relative;
   border-radius: 8px;
   flex-direction: column;
   color: $color-slate-blue;
