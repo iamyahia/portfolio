@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,10 +13,6 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   const pathName = usePathname();
-
-  useEffect(() => {
-    console.log(open);
-  }, [open]);
 
   return (
     <>
@@ -54,6 +50,7 @@ function Navbar() {
             </div>
           </Dialog.Trigger>
           <Dialog.Portal>
+            <div className="navbar__dialog-overlay" />
             {/* <Dialog.Overlay className="navbar__dialog-overlay" /> */}
             {/* //todo: add clsx for conditional class inserting */}
             <Dialog.Content
@@ -67,6 +64,10 @@ function Navbar() {
                       "navbar__link--active": pathName === item.href,
                     })}
                     key={item.key}
+                    onClick={() => {
+                      // console.log("pathName", pathName);
+                      if (pathName !== item.href) setOpen(false);
+                    }}
                   >
                     {item.value}
                   </Link>
@@ -80,4 +81,5 @@ function Navbar() {
     </>
   );
 }
+
 export default Navbar;

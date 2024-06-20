@@ -26,9 +26,9 @@
 }
 
 .navbar {
+  z-index: 3;
   padding: 0 24px;
   background-color: $color-black-pearl;
-  z-index: 1;
   position: relative;
 }
 
@@ -126,6 +126,7 @@
       .icon-transition {
         position: absolute;
         transition: opacity 0.3s ease-in-out;
+
         &.show {
           opacity: 1;
         }
@@ -148,11 +149,10 @@
     top: 45px;
     left: 0;
     right: 0;
-    // padding: 24px;
     position: absolute;
     background-color: $color-black-pearl;
-
-    animation-duration: 0.5s; // adjust as needed
+    z-index: 2;
+    animation-duration: 0.5s;
     &.show {
       animation-name: slideDown;
     }
@@ -167,6 +167,13 @@
   }
 
   .navbar__dialog-overlay {
-    // todo
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); // semi-transparent black
+    z-index: 1;
+    transition: background-color 0.25s ease;
   }
 }
