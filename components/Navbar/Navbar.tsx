@@ -1,16 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
 
 import { navItems } from "./navbarItems";
+import CloseIcon from "../../assets/icons/CloseIcon";
+import MenuIcon from "../../assets/icons/MenuIcon";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
 
   const pathName = usePathname();
+
+  useEffect(() => {
+    console.log(open);
+  }, [open]);
 
   return (
     <>
@@ -36,7 +42,17 @@ function Navbar() {
         </div>
         <Dialog.Root open={open} onOpenChange={setOpen} modal>
           <p className="navbar__dialog-logo-icon">yahia-hasan</p>
-          <Dialog.Trigger className="navbar__dialog-trigger">☰</Dialog.Trigger>
+          <Dialog.Trigger className="navbar__dialog-trigger">
+            {/* {open ? <CloseIcon /> : <MenuIcon />} */}
+            <div className="icon-container">
+              <MenuIcon
+                className={`icon-transition ${open ? "hide" : "show"}`}
+              />
+              <CloseIcon
+                className={`icon-transition ${open ? "show" : "hide"}`}
+              />
+            </div>
+          </Dialog.Trigger>
           <Dialog.Portal>
             {/* <Dialog.Overlay className="navbar__dialog-overlay" /> */}
             <Dialog.Content

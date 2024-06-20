@@ -25,6 +25,10 @@
   border-bottom: 1px solid $color-ebony-clay;
 }
 
+.navbar {
+  padding: 0 24px;
+}
+
 .navbar__logo {
   display: flex;
 }
@@ -47,10 +51,10 @@
 .navbar__contact {
   height: 100%;
   display: flex;
+  padding: 0 24px;
   align-items: center;
   text-decoration: none;
   color: $color-slate-blue;
-  padding: 0 24px;
 }
 
 .navbar__link,
@@ -105,7 +109,29 @@
   }
 
   .navbar__dialog-trigger {
+    border: none;
     display: inline;
+    background: none;
+    color: $color-white-shade;
+
+    .icon-container {
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+
+      .icon-transition {
+        position: absolute;
+        transition: opacity 0.3s ease-in-out;
+        &.show {
+          opacity: 1;
+        }
+
+        &.hide {
+          opacity: 0;
+        }
+      }
+    }
   }
   [class^="navbar__dialog"] {
     display: block;
@@ -114,7 +140,6 @@
   .navbar__dialog-logo-icon {
     display: flex;
     align-items: center;
-    padding-left: 24px;
   }
   .navbar__dialog-content {
     top: 60px;
@@ -123,6 +148,8 @@
     padding: 24px;
     position: absolute;
     background-color: $color-white-shade;
+
+    z-index: 10;
 
     animation-duration: 0.5s; // adjust as needed
     &.show {
