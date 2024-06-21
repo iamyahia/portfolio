@@ -27,7 +27,7 @@
 
 .navbar {
   z-index: 3;
-  padding: 0 24px;
+  padding-left: 24px;
   background-color: $color-black-pearl;
   position: relative;
 }
@@ -107,6 +107,9 @@
 }
 
 @media (max-width: 1024px) {
+  .navbar {
+    padding: 0 24px;
+  }
   .navbar__container {
     display: none;
   }

@@ -5,19 +5,30 @@ import InstagramIcon from "../../assets/icons/InstagramIcon";
 const Footer = () => {
   return (
     <footer className="footer">
-      {/* // TODO: fix spacing and add classname then remove inline css style. */}
-      <p>find me in:</p>
-      <div className="social-icons">
-        <div style={{ display: "flex" }}>
-          <a href="https://linkedin.com/in/iamyahia" target="_blank">
+      <p className="footer__text">find me in:</p>
+      <div className="footer__icons-container">
+        <div className="footer__icon-group">
+          <a
+            href="https://linkedin.com/in/iamyahia"
+            target="_blank"
+            className="footer__linkedin-link"
+          >
             <LinkedinIcon />
           </a>
-          <a href="https://instagram.com/yahiabaiz" target="_blank">
+          <a
+            href="https://instagram.com/yahiabaiz"
+            target="_blank"
+            className="footer__instagram-link"
+          >
             <InstagramIcon />
           </a>
         </div>
-        <a href="https://github.com/iamyahia" target="_blank">
-          <span>@iamyahia</span>
+        <a
+          href="https://github.com/iamyahia"
+          target="_blank"
+          className="footer__github-link"
+        >
+          <span className="footer__github-username">@iamyahia</span>
           <GithubIcon />
         </a>
       </div>

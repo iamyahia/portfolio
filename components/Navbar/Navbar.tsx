@@ -39,22 +39,28 @@ function Navbar() {
         <Dialog.Root open={open} onOpenChange={setOpen} modal>
           <p className="navbar__dialog-logo-icon">yahia-hasan</p>
           <Dialog.Trigger className="navbar__dialog-trigger">
-            {/* {open ? <CloseIcon /> : <MenuIcon />} */}
             <div className="icon-container">
               <MenuIcon
-                className={`icon-transition ${open ? "hide" : "show"}`}
+                className={clsx("icon-transition", {
+                  hide: open,
+                  show: !open,
+                })}
               />
               <CloseIcon
-                className={`icon-transition ${open ? "show" : "hide"}`}
+                className={clsx("icon-transition", {
+                  show: open,
+                  hide: !open,
+                })}
               />
             </div>
           </Dialog.Trigger>
           <Dialog.Portal>
             <div className="navbar__dialog-overlay" />
-            {/* <Dialog.Overlay className="navbar__dialog-overlay" /> */}
-            {/* //todo: add clsx for conditional class inserting */}
             <Dialog.Content
-              className={`navbar__dialog-content ${open ? "show" : "hide"}`}
+              className={clsx("navbar__dialog-content", {
+                show: open,
+                hide: !open,
+              })}
             >
               <div className="navbar__dialog-description">
                 {navItems.map((item) => (
@@ -65,7 +71,6 @@ function Navbar() {
                     })}
                     key={item.key}
                     onClick={() => {
-                      // console.log("pathName", pathName);
                       if (pathName !== item.href) setOpen(false);
                     }}
                   >
@@ -73,7 +78,6 @@ function Navbar() {
                   </Link>
                 ))}
               </div>
-              {/* <Dialog.Close className="navbar__dialog-close">x</Dialog.Close> */}
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>

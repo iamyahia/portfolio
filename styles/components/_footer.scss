@@ -3,9 +3,9 @@
   display: flex;
   overflow: auto;
   z-index: 1;
-  position: relative;
   font-size: 16px;
   text-wrap: nowrap;
+  position: relative;
   align-items: center;
   background-color: $color-black-pearl;
   border-top: 1px solid $color-ebony-clay;
@@ -13,7 +13,8 @@
   p {
     padding: 0 20px;
   }
-  .social-icons {
+
+  .footer__icons-container {
     left: 100%;
     width: 100%;
     height: 100%;
@@ -23,6 +24,17 @@
 
     @media (max-width: 768px) {
       justify-content: end;
+    }
+
+    .footer__icon-group {
+      display: flex;
+    }
+
+    .footer__instagram-link {
+      border-right: 1px solid $color-ebony-clay;
+    }
+    .footer__github-link {
+      gap: 8px;
     }
 
     a {
