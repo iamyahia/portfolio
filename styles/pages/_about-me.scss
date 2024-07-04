@@ -1,23 +1,28 @@
-.about-me {
+.about-me__layout {
+  display: flex;
+  height: 100%;
+
   .about-me__sidebar {
     display: flex;
-    width: 60px;
     align-items: center;
     flex-direction: column;
     border-right: 1px solid #1e2d3d;
+  }
+  .about-me__link {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    color: $color-slate-blue;
+    border-bottom: 1px solid $color-ebony-clay;
+    transition: color 0.25s, background-color 0.25s;
 
-    .about-me__link {
-      padding: 1rem;
-      text-align: center;
-      width: 100%;
-      color: $color-slate-blue;
-      border-bottom: 1px solid $color-ebony-clay;
-      transition: color 0.25s, background-color 0.25s;
+    &:hover {
+      color: $color-white-shade;
+      background-color: rgba($color-white-shade, 0.1);
+    }
 
-      &:hover {
-        color: $color-white-shade;
-        background-color: rgba($color-white-shade, 0.1);
-      }
+    &--active {
+      color: white;
     }
   }
 }
