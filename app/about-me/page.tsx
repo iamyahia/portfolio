@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+// TODO: add eslint rule to enforce import order
 import Link from "next/link";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 
@@ -8,7 +9,12 @@ import FileAccordion from "../../components/FileAccordion/FileAccordion";
 export default function AboutMe() {
   return (
     <PanelGroup direction="horizontal" className="about-me__container">
-      <Panel defaultSize={10} minSize={5} className="about-me__panel">
+      <Panel
+        defaultSize={10}
+        minSize={5}
+        className="about-me__panel"
+        collapsible
+      >
         <FileAccordion />
       </Panel>
       <PanelResizeHandle
