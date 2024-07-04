@@ -4,7 +4,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
-import FilesIcon from "../../assets/icons/Files";
+import FilesIcon from "../../assets/icons/FilesIcon";
 import TerminalIcon from "../../assets/icons/TerminalIcon";
 
 function AboutMeLayout({ children }) {
