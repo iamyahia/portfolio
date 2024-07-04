@@ -1,31 +1,15 @@
 "use client";
 import React from "react";
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-import ResizeIcon from "../../assets/icons/ResizeIcon";
-import FilesIcon from "../../assets/icons/Files";
 import Link from "next/link";
+import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
+
+import FileAccordion from "../../components/FileAccordion/FileAccordion";
 
 export default function AboutMe() {
   return (
-    <PanelGroup direction="horizontal" className="about-me">
-      <div className="about-me__sidebar">
-        <Link href="/about-me" className="about-me__link">
-          <FilesIcon className="about-me__icon" />
-        </Link>
-        <Link href="/about-me" className="about-me__link">
-          <FilesIcon className="about-me__icon" />
-        </Link>
-        <Link href="/about-me" className="about-me__link">
-          <FilesIcon className="about-me__icon" />
-        </Link>
-      </div>
-      <Panel
-        collapsible={true}
-        collapsedSize={35}
-        minSize={10}
-        className="about-me__panel"
-      >
-        sourcebrowser{" "}
+    <PanelGroup direction="horizontal" className="about-me__container">
+      <Panel defaultSize={10} minSize={5} className="about-me__panel">
+        <FileAccordion />
       </Panel>
       <PanelResizeHandle
         style={{
@@ -34,10 +18,10 @@ export default function AboutMe() {
           alignItems: "center",
         }}
         className="about-me__resize-handle"
-      >
-        {/* <ResizeIcon /> */}
-      </PanelResizeHandle>
-      <Panel className="about-me__panel">sourceviewer</Panel>
+      />
+      <Panel defaultSize={60} minSize={20} className="about-me__panel">
+        sourceviewer
+      </Panel>
     </PanelGroup>
   );
 }
