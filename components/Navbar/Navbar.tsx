@@ -24,7 +24,10 @@ function Navbar() {
               <Link
                 href={item.href}
                 className={clsx("navbar__link", {
-                  "navbar__link--active": pathName === item.href,
+                  "navbar__link--active":
+                    item.href === "/"
+                      ? pathName === item.href
+                      : pathName.startsWith(item.href),
                 })}
                 key={item.key}
               >
