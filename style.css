@@ -3,14 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-@font-face {
-  font-family: pascante;
-  src: url("./assets/fonts/Pescante-Normal.ttf");
-}
+
 body {
   background-color: black;
   color: #eee;
-  font-family: pascante;
+  font-family: Georgia, "Times New Roman", Times, serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
