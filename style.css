@@ -291,6 +291,7 @@ body {
 
   .social-link {
     width: 100%;
+    height: 3rem;
     max-width: 300px;
     justify-content: center;
   }
