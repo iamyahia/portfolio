@@ -182,6 +182,7 @@ body {
 
 .social-link {
   display: flex;
+  height: 3rem;
   align-items: center;
   gap: 0.5rem;
   color: #eee;
@@ -291,7 +292,6 @@ body {
 
   .social-link {
     width: 100%;
-    height: 3rem;
     max-width: 300px;
     justify-content: center;
   }
